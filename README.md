@@ -4,6 +4,7 @@ This repo is a placeholder for official implementation of the paper "Multimodal 
 # Introduction
 This paper proposes a novel transformer based real world action recognition method. The proposed method involves two single modality transformer models, for performing action recogniton on [Nurse-Activity-Recogntion-dataset(2019)](https://ieee-dataport.org/competitions/nurse-care-activity-recognition-challenge). 
 
+![alt text](https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/simple.png)
 ![alt text](https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/fusion.png)
 
 
