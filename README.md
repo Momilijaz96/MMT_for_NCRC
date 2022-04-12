@@ -12,7 +12,7 @@ This repo is a placeholder for official implementation of the paper "Multimodal 
 
 | ![alt text](https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/fusion.png) | 
 |:--:| 
-| *Cross View Fusion Model* |
+| *Cross View Fusion Model (a) Cross View Fusion (b) MultiModal Transformer with CrossView Fusion * |
 
 
 
