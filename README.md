@@ -7,12 +7,9 @@ This repo is a placeholder for official implementation of the paper "Multimodal 
 ## Citation
 If you find this useful in your work, please consider citing,
 ```
-@inproceedings{yang2020mutualnet,
-  title={MutualNet: Adaptive ConvNet via Mutual Learning from Network Width and Resolution},
-  author={Yang, Taojiannan and Zhu, Sijie and Chen, Chen and Yan, Shen and Zhang, Mi and Willis, Andrew},
-  booktitle={European Conference on Computer Vision},
-  pages={299--315},
-  year={2020},
-  organization={Springer}
-}
+@article{momal2022multimodal_transformer,
+  title={Multimodal Transformer for Nurse Activity Recognition},
+  author={Momal Ijaz, Renato Diaz ,Chen Chen},
+  journal={arXiv preprint arXiv:2204.04564},
+  year={2022}}
 ```
