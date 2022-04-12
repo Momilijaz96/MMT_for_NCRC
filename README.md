@@ -15,9 +15,16 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 | *Cross View Fusion Model (a) Cross View Fusion (b) MultiModal Transformer with CrossView Fusion * |
 
 
-
-
 # Results and Models
+| Model                     | Accuracy | F1-score  | Precision |  
+| ------------------------- |:--------:| ---------:| ---------:|
+| Skeleton Model            |   76.7   |   67.0    |   69.1    |
+| Acceleration Model        |   45.6   |   10.9    |   9.3     |
+| Simple Fusion             |   75.0   |   71.6    |   75.6    |
+| Cross View Fusion Model   |   81.8   |   78.4.   |   79.4    |
+
+
+
 # Usage
 ## Citation
 If you find this useful in your work, please consider citing,
