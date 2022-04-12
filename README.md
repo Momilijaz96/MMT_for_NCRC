@@ -9,7 +9,7 @@ This repo is a placeholder for official implementation of the paper "Multimodal 
 |:--:| 
 | *Single Modality Transformers (a) Skeletal Joints Model (b) Acceleraion Model* |
 
-
+We propose a multi-modal transformer by combining both skeletal joints and acceleration data models final cls tokens and also introuce an additional cross view fusion between both model's layer to develop stronger and better feature vectors for final action recognition.
 | ![alt text](https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/fusion.png) | 
 |:--:| 
 | *Cross View Fusion Model (a) Cross View Fusion (b) MultiModal Transformer with CrossView Fusion * |
