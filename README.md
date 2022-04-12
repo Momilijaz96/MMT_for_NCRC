@@ -25,7 +25,7 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 
 | <img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/f1.png " width="400"> | 
 |:--:| 
-| *Class Wise F1-score with top two solutions, STGCN and KNN* |
+| *Class Wise F1-score comparison with top two solutions, STGCN and KNN* |
 
 # Usage
 ## Citation
