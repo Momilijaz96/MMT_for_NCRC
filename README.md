@@ -16,12 +16,12 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 
 
 # Results and Models
-| Model                     | Accuracy | F1-score  | Precision |  
-| ------------------------- |:--------:| ---------:| ---------:|
-| Skeleton Model            |   76.7   |   67.0    |   69.1    |
-| Acceleration Model        |   45.6   |   10.9    |   9.3     |
-| Simple Fusion             |   75.0   |   71.6    |   75.6    |
-| Cross View Fusion Model   |   81.8   |   78.4.   |   79.4    |
+| Model                     | Accuracy | F1-score  | Precision |  Recall | CheckPoint|
+| ------------------------- |:--------:| ---------:| ---------:| -------:| ---------:|
+| Skeleton Model            |   76.7   |   67.0    |   69.1    |   70.5  | 
+| Acceleration Model        |   45.6   |   10.9    |   9.3     |   14.9  |
+| Simple Fusion             |   75.0   |   71.6    |   75.6    |   72.3  | 
+| Cross View Fusion Model   |   81.8   |   78.4.   |   79.4    |   78.3  |
 
 
 
