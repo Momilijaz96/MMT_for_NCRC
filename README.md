@@ -25,7 +25,8 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 
 
 Class Wise F1-score comparison with top two solutions posted for the nurse Activity Recogniton challenge dataset, STGCN and KNN is as follows. we can see for almost all classes our proposed solution out-performs the ST-GCN and hand-crafted feature based KNN method.
-<img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/f1.png " width="400"> 
+
+<img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/f1.png " width="400"/> 
 
 # Usage
 ## Citation
