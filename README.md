@@ -2,9 +2,14 @@
 This repo is a placeholder for official implementation of the paper "Multimodal transformer for Nurse Activity Recognition", published in CVPM2020, CVPRW.
 
 # Introduction
-This paper proposes a novel transformer based real world action recognition method. The proposed method involves two single modality transformer models, for performing action recogniton on [Nurse-Activity-Recogntion-dataset(2019)](https://ieee-dataport.org/competitions/nurse-care-activity-recognition-challenge). 
-
+This paper proposes a novel transformer based real world action recognition method. The proposed method involves two single modality transformer models, for performing action recogniton on [Nurse-Activity-Recogntion-dataset(2019)](https://ieee-dataport.org/competitions/nurse-care-activity-recognition-challenge). First single moadlity transformer extract sptio-temporal features from skeletal joints of data the subjects and tries to recognize nurse activities from just single modality data. Second single modality transformer performs action recogniton by modeling correlation between acceleration of the performer. Both models are shwon as follows. 
 ![alt text](https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/single.png)
+*image_caption*
+
+
+
+This paper proposes a novel transformer based real world action recognition method. The proposed method involves two single modality transformer models, for performing action recogniton on [Nurse-Activity-Recogntion-dataset(2019)](https://ieee-dataport.org/competitions/nurse-care-activity-recognition-challenge). First single moadlity transformer extract sptio-temporal features from skeletal joints of data the subjects and tries to recognize nurse activities from just single modality data. Second single modality transformer performs action recogniton by modeling correlation between acceleration of the performer. Both models are shwon as follows. 
+
 ![alt text](https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/fusion.png)
 
 
