@@ -22,6 +22,8 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 | Acceleration Model        |   45.6   |   10.9    |   9.3     |   14.9  | [AccModel.pth](https://drive.google.com/file/d/16ROhR6_thVaj-1dqSN-hKJSH5fRAYkVL/view?usp=sharing)
 | Simple Fusion             |   75.0   |   71.6    |   75.6    |   72.3  | [SimpleFusion.pth](https://drive.google.com/file/d/1HNYp4HAU3mpUzikxkf_uSkcyz7kwLQK4/view?usp=sharing)
 | Cross View Fusion Model   |   81.8   |   78.4.   |   79.4    |   78.3  | [CrossViewFusion.pth](https://drive.google.com/file/d/1SWQ3EbLvH_hauJE22eqrYatsqv2e4rAO/view?usp=sharing)
+
+
 Class Wise F1-score comparison with top two solutions, STGCN and KNN is as follows:
 <img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/f1.png " width="400"> 
 
