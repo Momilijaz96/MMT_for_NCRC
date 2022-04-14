@@ -28,7 +28,8 @@ We compare our methods with all other existing solutions reported on the NCRC da
 * Motion Capture - 29 Skeletal joints data of nurse
 * Acceleration - Acceleration of the nurse
 * Location - (x,y) location of the nurse 
-Table below lists different methods, 
+Table below lists results for different methods utilizing different modalities, whereas our transformer based solution outperforms them all.
+
 | Sensors Used                           |    Method     | Validation Accuracy |
 | ---------------------------------------|:-------------:| -------------------:|
 | __Acceleration and Motion Capture (Ours)__| __[Transformers](https://arxiv.org/pdf/2204.04564.pdf)__ |      __81.8__         |
