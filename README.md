@@ -45,7 +45,13 @@ Graphs shown below reflect the effectivness of proposed solution. Pn right, he b
 
 
 # Usage
+## Requirements
 
+## Training on custom data
+### Data preperation
+### Training
+
+## Inference
 
 ## Citation
 If you find this useful in your work, please consider citing,
