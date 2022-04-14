@@ -46,7 +46,11 @@ Graphs shown below reflect the effectivness of proposed solution. Pn right, he b
 
 # Usage
 ## Requirements
-
+Create a conda environment and install dependencies from given requirements.txt.
+```
+conda create --name myenv python=3.6
+conda env create -f Tools/mmt_env.yml
+```
 ## Training on custom data
 ### Data preperation
 ### Training
