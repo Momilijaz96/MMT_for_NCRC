@@ -1,3 +1,6 @@
+'''
+This is the Accleration Only model, that takes just the acceleration data from the data sample and performs action recognition using acceleration only.
+'''
 import math
 import logging
 from functools import partial
