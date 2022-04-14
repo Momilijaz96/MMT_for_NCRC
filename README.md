@@ -41,7 +41,7 @@ Table below lists results for different methods utilizing different modalities, 
 
 Class Wise F1-score comparison with top two solutions posted for the nurse Activity Recogniton challenge dataset, STGCN and KNN is as follows. We can see for almost all classes our proposed solution out-performs the ST-GCN and hand-crafted feature based KNN method.
 
-<img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/f1.png " width="400"/> <img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/val_acc.png " width="400"/> 
+<img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/f1.png " width="400"/> <img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/val_acc.png " width="370"/> 
 
 
 # Usage
