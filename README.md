@@ -52,6 +52,7 @@ conda create --name myenv python=3.6
 conda env create -f Tools/mmt_env.yml
 ```
 ## Training on custom data
+To be filled...
 ### Data preperation
 ### Training
 
