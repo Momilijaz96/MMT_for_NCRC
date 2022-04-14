@@ -24,14 +24,15 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 | Cross View Fusion Model   |   81.8   |   78.4.   |   79.4    |   78.3  | [CrossViewFusion.pth](https://drive.google.com/file/d/1SWQ3EbLvH_hauJE22eqrYatsqv2e4rAO/view?usp=sharing)
 
 ## Comparison with state-of-the-art
-| Sensors Used                           | Accuracy | F1-score  | Precision |  Recall | CheckPoint|
-| ---------------------------------------|:--------:| ---------:| ---------:| -------:| ---------:|
-| Motion Capture and Location            |         |   76.7   |   67.0    |   69.1    |   70.5  | [SkeletonModel.pth]
-| Motion Capture                         |   45.6   |   10.9    |   9.3     |   14.9  | [AccModel.pth]
-| All Modalities                         |   75.0   |   71.6    |   75.6    |   72.3  | [SimpleFusion.pth]
-| Acceleration                           |   81.8   |   78.4.   |   79.4    |   78.3  | [CrossViewFusion.pth]
-| Motion Capture and Location            |
-| Acceleration and Motion Capture (Ours) |
+| Sensors Used                           | Method   | Validation Accuracy |
+| ---------------------------------------|:--------:| -------------------:|
+| Motion Capture and Location            |          |        76.7         |
+| Motion Capture                         |   45.6   |                     |
+| All Modalities                         |   75.0   |                     |
+| Acceleration                           |   81.8   |                     |
+| Motion Capture and Location            |          |                     |
+| Acceleration and Motion Capture (Ours) |          |                     |
+
 Class Wise F1-score comparison with top two solutions posted for the nurse Activity Recogniton challenge dataset, STGCN and KNN is as follows. we can see for almost all classes our proposed solution out-performs the ST-GCN and hand-crafted feature based KNN method.
 
 <img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/f1.png " width="400"/> 
