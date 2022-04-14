@@ -7,12 +7,12 @@ This repo is for official implementation of the paper "Multimodal transformer fo
 
 | <img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/single.png "> | 
 |:--:| 
-| *Single Modality Transformers (a) Skeletal Joints Model (b) Acceleraion Model* |
+| __Single Modality Transformers (a) Skeletal Joints Model (b) Acceleraion Model__ |
 
 We propose a multi-modal transformer by combining both skeletal joints and acceleration data models' final cls tokens and also introuce an additional cross view fusion between both model's layer to develop stronger and better feature vectors for final action recognition. In fusion layer, the spatio-temporal skeletal joints tokens attend to the self-encoded acceleration tokens, which is repeated in all layers. Our result deonstrate the fusing acceleration and skeletal joints gives better action recogniton performance as compare to single modality transformers and simple fusion of both models wiithout cross view fusion. 
 | ![alt text](https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/fusion.png) | 
 |:--:| 
-| *Cross View Fusion Model (a) Cross View Fusion (b) MultiModal Transformer with CrossView Fusion * |
+| __Cross View Fusion Model (a) Cross View Fusion (b) MultiModal Transformer with CrossView Fusion__ |
 
 
 # Results and Checkpoints
@@ -39,11 +39,13 @@ Table below lists results for different methods utilizing different modalities, 
 | Acceleration                           | [Random Forest](https://www.researchgate.net/publication/335765627_Nurse_care_activity_recognition_challenge_summary_and_results) |        43.1         |
 | Motion Capture and Location            |      [GRU](https://dl.acm.org/doi/abs/10.1145/3341162.3344848)      |        29.3         |
 
-Class Wise F1-score comparison with top two solutions posted for the nurse Activity Recogniton challenge dataset, STGCN and KNN is as follows. We can see for almost all classes our proposed solution out-performs the ST-GCN and hand-crafted feature based KNN method.
+Graphs shown below reflect the effectivness of proposed solution. Pn right, he bar graph shows class Wise F1-score comparison with top two solutions posted for the nurse Activity Recogniton challenge dataset, STGCN and KNN. We can see for almost all classes our proposed solution out-performs the ST-GCN and hand-crafted feature based KNN method. On right, we have validation accuracy for all existing solutions as mentioned in table above. 
 <img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/results.png" width="700"/> 
 
 
 # Usage
+
+
 ## Citation
 If you find this useful in your work, please consider citing,
 ```
