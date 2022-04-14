@@ -1,4 +1,4 @@
-name: fallenv
+name: mmt_env
 channels:
   - defaults
 dependencies:
@@ -52,4 +52,3 @@ dependencies:
     - timm==0.5.4
     - tomli==1.2.2
     - tqdm==4.62.3
-prefix: /home/mo926312/.conda/envs/fallenv
