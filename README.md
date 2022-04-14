@@ -26,7 +26,7 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 ## Comparison with state-of-the-art
 | Sensors Used                           |    Method     | Validation Accuracy |
 | ---------------------------------------|:-------------:| -------------------:|
-| Motion Capture and Location            |      KNN      |        80.2         |
+| Motion Capture and Location            |      [KNN](https://dl.acm.org/doi/pdf/10.1145/3341162.3344859)      |        80.2         |
 | Motion Capture                         |     ST-GCN    |        64.6         |
 | All Modalities                         |      CNN      |        46.5         |
 | Acceleration                           | Random Forest |        43.1         |
