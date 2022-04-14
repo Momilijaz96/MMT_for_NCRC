@@ -26,12 +26,12 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 ## Comparison with state-of-the-art
 | Sensors Used                           |    Method     | Validation Accuracy |
 | ---------------------------------------|:-------------:| -------------------:|
+| __Acceleration and Motion Capture (Ours)__| __[Transformers](https://arxiv.org/pdf/2204.04564.pdf)__ |      __81.8__         |
 | Motion Capture and Location            |      [KNN](https://dl.acm.org/doi/pdf/10.1145/3341162.3344859)      |        80.2         |
 | Motion Capture                         |     [ST-GCN](https://dl.acm.org/doi/abs/10.1145/3341162.3345581)    |        64.6         |
 | All Modalities                         |      [CNN](https://www.researchgate.net/publication/335765627_Nurse_care_activity_recognition_challenge_summary_and_results)      |        46.5         |
 | Acceleration                           | [Random Forest](https://www.researchgate.net/publication/335765627_Nurse_care_activity_recognition_challenge_summary_and_results) |        43.1         |
 | Motion Capture and Location            |      [GRU](https://dl.acm.org/doi/abs/10.1145/3341162.3344848)      |        29.3         |
-| __Acceleration and Motion Capture (Ours)__| __[Transformers](https://arxiv.org/pdf/2204.04564.pdf)__ |      __81.8__         |
 
 Class Wise F1-score comparison with top two solutions posted for the nurse Activity Recogniton challenge dataset, STGCN and KNN is as follows. we can see for almost all classes our proposed solution out-performs the ST-GCN and hand-crafted feature based KNN method.
 
