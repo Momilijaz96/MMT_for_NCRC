@@ -1,3 +1,9 @@
+'''
+This is simple fusion model, that uses both acceleration and skeletal joints data,
+computes their features using single modality models 
+and simply concats the final cls tokens of each model before performing final action recogniton.
+'''
+
 import math
 import logging
 from functools import partial
@@ -265,9 +271,3 @@ class ActRecogTransformer(nn.Module):
         return F.log_softmax(x,dim=1)
 
 
-'''
-model=ActRecogTransformer()
-x=torch.randn((14,600,149,3))
-op=model(x)
-print("Op shape: ",op.shape)
-'''

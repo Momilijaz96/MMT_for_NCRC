@@ -1,3 +1,9 @@
+'''
+This is implementation of the proposed CrossView Fusion model, that utilized both acceleration and skeletal joints data.
+Computes their features from single modality models and also performs cross view fusion between models.
+The final cls tokens of each model are added before final classification decision.
+'''
+
 import math
 import logging
 from functools import partial
@@ -298,9 +304,4 @@ class ActRecogTransformer(nn.Module):
 
         return F.log_softmax(x,dim=1)
 
-'''
-model=ActRecogTransformer()
-x=torch.randn((14,600,197,4))
-op=model(x)
-print("Op shape: ",op.shape)
-'''
+
