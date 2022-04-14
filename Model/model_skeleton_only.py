@@ -1,3 +1,6 @@
+'''
+This is Skeleton Only model, that uses skeletal joints from data sample and extract sptio-temporal features, which are used to perform action recognition.
+'''
 import math
 import logging
 from functools import partial
@@ -185,9 +188,3 @@ class ActRecogTransformer(nn.Module):
         return F.log_softmax(x,dim=1)
 
 
-'''
-model=ActRecogTransformer()
-x=torch.randn((14,600,149,3))
-op=model(x)
-print("Op shape: ",op.shape)
-'''
