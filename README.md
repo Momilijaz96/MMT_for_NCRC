@@ -24,7 +24,11 @@ We propose a multi-modal transformer by combining both skeletal joints and accel
 | Cross View Fusion Model   |   81.8   |   78.4.   |   79.4    |   78.3  | [CrossViewFusion.pth](https://drive.google.com/file/d/1SWQ3EbLvH_hauJE22eqrYatsqv2e4rAO/view?usp=sharing)
 
 ## Comparison with state-of-the-art
-We compare our methods with all other existing solutions reported on the NCRC dataset, including the hand-crafted-feature-based KNN winning entry. Among availabel NCRC data modalities, we 
+We compare our methods with all other existing solutions reported on the NCRC dataset, including the hand-crafted-feature-based KNN winning entry. NCRC dataset offers three different sensors data during course of performing action, including
+* Motion Capture - 29 Skeletal joints data of nurse
+* Acceleration - Acceleration of the nurse
+* Location - (x,y) location of the nurse 
+Table below lists different methods, 
 | Sensors Used                           |    Method     | Validation Accuracy |
 | ---------------------------------------|:-------------:| -------------------:|
 | __Acceleration and Motion Capture (Ours)__| __[Transformers](https://arxiv.org/pdf/2204.04564.pdf)__ |      __81.8__         |
