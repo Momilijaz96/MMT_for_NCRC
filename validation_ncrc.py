@@ -11,10 +11,6 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train a recognizer')
     parser.add_argument('--ckpt_path', help='Path to ckpt', default = None)
     parser.add_argument('--model', help='Model FileName', default ='model_crossview_fusion')
-    parser.add_argument(
-        '--resume-from', help='the checkpoint file to resume from')
-
-
 
 def main():
 
