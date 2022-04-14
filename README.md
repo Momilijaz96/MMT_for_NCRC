@@ -40,8 +40,7 @@ Table below lists results for different methods utilizing different modalities, 
 | Motion Capture and Location            |      [GRU](https://dl.acm.org/doi/abs/10.1145/3341162.3344848)      |        29.3         |
 
 Class Wise F1-score comparison with top two solutions posted for the nurse Activity Recogniton challenge dataset, STGCN and KNN is as follows. We can see for almost all classes our proposed solution out-performs the ST-GCN and hand-crafted feature based KNN method.
-
-<img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/val_acc.png " width="350"/> <img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/f1.png " width="400"/> 
+<img src="https://github.com/Momilijaz96/MMT_for_NCRC/blob/main/images/results.png " width="400"/> 
 
 
 # Usage
