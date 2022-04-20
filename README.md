@@ -52,11 +52,11 @@ conda create --name myenv python=3.6
 conda env create -f Tools/mmt_env.yml
 ```
 ## Training 
-Download the data and put the path of acceleration and skeletal joints data and labels in the config file. Simply run the following command.
+Download the data and put the path of acceleration and skeletal joints data and labels in the config file. Simply run the following command to train the crossview fusion model on the NurseCareActivityRecognition dataset. 
 ```
 python3 train_ncrc.py 
 ```
-
+Note: For training another model, you can simply import relevant model in train_ncrc script.
 ## Inference
 For inference load desired chcekpoint and select a model name. For example for validation on NCRC data using CrossView fusion model, run.
 Where CKTP_PATH is the path to correspoding downloaded checkpoint model, and a valid model name can be 
