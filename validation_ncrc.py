@@ -1,11 +1,12 @@
 import numpy as np
 from Make_Dataset import Poses3d_Dataset
-import PreProcessing_ncrc_losocv
+import PreProcessing_ncrc
 import torch
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import confusion_matrix
 import argparse
-import Tools/config as cfg
+import config as cfg
+import sys
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a recognizer')
@@ -28,7 +29,7 @@ def main():
                     'num_workers': 3}
 
           # Datasets
-          pose2id,labels,partition=PreProcessing_ncrc_losocv.preprocess_losocv(5)
+          pose2id,labels,partition=PreProcessing_ncrc.preprocess()
 
           print("Creating Data Generators...")
           mocap_frames = 600
@@ -42,21 +43,18 @@ def main():
           #Load pretrained model and criterion
           valid_models= ['model_acc_only','model_crossview_fusion','model_skeleton_only','model_simple_fusion']
           model = args.model
-          assert model in valid_model, "Please give a valid model name from this list: "+ str(valid_models)
-          model_pah = args.ckpt_path
+          assert model in valid_models, "Please give a valid model name from this list: "+ str(valid_models)
+          model_path = args.ckpt_path
           _temp = __import__('Model.'+model, globals(), locals(), ['ActRecogTransformer'], -1)
           ActRecogTransformer = _temp.ActRecogTransformer
 
           if model_path is None:
                     print("Please provide model checkpoint as cmd ine arg for --ckpt_path")
-                    sys.exis(-1)
+                    sys.exit(-1)
           
           model = ActRecogTransformer(device)
           model.load_state_dict(torch.load(model_path))
           model = model.to(device)
-
-          #Loss
-          criterion=torch.nn.CrossEntropyLoss()
 
           #Loop over validation split
           model.eval()
@@ -65,7 +63,7 @@ def main():
           accuracy=0
           all_targets=[]
           all_predictions=[]
-          for batch_idx,sample in enumerate(validation_generator):
+          for _,sample in enumerate(validation_generator):
               #Transfer to GPU
               inputs, targets = sample
               inputs, targets = inputs.to(device), targets.to(device)
@@ -77,9 +75,6 @@ def main():
               #Convert to numpy array
               predict_labels = predict_labels.cpu().detach().numpy()
               targets = targets.cpu().detach().numpy()
-
-              #Compute number of correctly predicted - Overall
-              #prec,rec,f1,_ = precision_recall_fscore_support(targets,predict_labels,average='macro')
 
               #Acompute accuracy
               cnt+=len(targets)

@@ -2,15 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import re
-
-MOCAP_FREQ = 100
-MEDITAG_FREQ = 20
-ACC_FREQ = 4
-
-MOCAP_WINDOW= 200 #SAMPLE IN A 2 SEC WINDOW OF MOCAP SENSOR
-MEDITAG_WINDOW= 20 #SAMPLES IN A 1 SEC WINDOW OF A MOCAP SENSOR
-MOCAP_WINDOWS = 6000//MOCAP_WINDOW #MOCAP sensor can have 30 windows per action of 2 sec
-MEDIAG_WINDOWS = 600//MEDITAG_WINDOW #MEDITAG can have 30 windows of size 30 sec per action
+import config as cfg
 
 
 #################### UTILITY FUNCTIONS #######################
@@ -82,18 +74,14 @@ def preprocess():
     #Get pose dir to id dict, and id to label dict
 
     #NCRC path
-    mocap_train_path='/home/mo926312/Documents/falldet/ncrc/train/mocap/'
-    mocap_test_path='/home/mo926312/Documents/falldet/ncrc/test/mocap/'
+    mocap_train_path=cfg.file_paths['mocap_train_path']
+    mocap_test_path=cfg.file_paths['mocap_test_path']
 
-    meditag_train_path='/home/mo926312/Documents/falldet/ncrc/train/meditag_train.csv'
-    meditag_test_path='/home/mo926312/Documents/falldet/ncrc/test/meditag_test.csv'
+    acc_train_path=cfg.file_paths['acc_train_path']
+    acc_test_path=cfg.file_paths['acc_test_path']
 
-    acc_train_path='/home/mo926312/Documents/falldet/ncrc/train/accelerometer_train.csv'
-    acc_test_path='/home/mo926312/Documents/falldet/ncrc/test/accelerometer_test.csv'
-
-    tr_labels_path='/home/mo926312/Documents/falldet/ncrc/train/activities_train.csv'
-    tst_labels_path='/home/mo926312/Documents/falldet/ncrc/test/activities_test.csv'
-
+    tr_labels_path=cfg.file_paths['tr_labels_path']
+    tst_labels_path=cfg.file_paths['tst_labels_path']
 
     aug_path=None
 

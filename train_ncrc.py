@@ -1,38 +1,19 @@
 import torch
 import numpy as np
 from Make_Dataset import Poses3d_Dataset
-import PreProcessing_ncrc_losocv
 import PreProcessing_ncrc
-
-#from Model.model_skeleton_only import ActRecogTransformer
-#from Model.model_acc_early_fusion import ActRecogTransformer
-from Model.model_acc_qkvfusion import ActRecogTransformer
-#from Model.model_acc_qkvfusion_both import ActRecogTransformer
-#from Model.model_isolated_token import ActRecogTransformer
-#from Model.model_acc_only import ActRecogTransformer
-#from Model.model_iip_fusion_v2 import ActRecogTransformer
-#from Model.model_win_acc_only import ActRecogTransformer
-#from Model.model_acc_qkvfusion_tokenmap import ActRecogTransformer
-
-
-from utils.visualize import get_plot
+from Model.model_crossview_fusion import ActRecogTransformer
+from Tools.visualize import get_plot
 import pickle
 from asam import ASAM, SAM
 from timm.loss import LabelSmoothingCrossEntropy
 import os
 
-#exp='losocv-6'
-exp = 'cvpm-78'
+exp = 'myexp-1' #Assign an experiment id
 
-if not os.path.exists('cvpm_exp/'+exp+'/'):
-    os.makedirs('cvpm_exp/'+exp+'/')
-PATH='cvpm_exp/'+exp+'/'
-
-'''
-if not os.path.exists('acc_check/'+exp+'/'):
-    os.makedirs('acc_check/'+exp+'/')
-PATH='acc_check/'+exp+'/'
-'''
+if not os.path.exists('exps/'+exp+'/'):
+    os.makedirs('exps/'+exp+'/')
+PATH='exps/'+exp+'/'
 
 #CUDA for PyTorch
 print("Using CUDA....")
@@ -74,17 +55,14 @@ lr=0.0025
 wt_decay=5e-4
 
 criterion = torch.nn.CrossEntropyLoss()
-print("Criterion: CE")
 
 optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.9,weight_decay=wt_decay)
 #optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=wt_decay)
-print("optimizer: SGD, lr: ",lr)
 
 #ASAM
 rho=0.5
 eta=0.01
 minimizer = ASAM(optimizer, model, rho=rho, eta=eta)
-print("Using ASAM")
 
 #Learning Rate Scheduler
 #scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(minimizer.optimizer, max_epochs)
@@ -173,7 +151,6 @@ for epoch in range(max_epochs):
 
     epoch_loss_val.append(loss)
     epoch_acc_val.append(accuracy)
-
 
 
 print(f"Best test accuracy: {best_accuracy}")

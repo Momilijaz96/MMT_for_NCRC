@@ -6,7 +6,7 @@ import random
 import torch.nn.functional as F
 pd.options.mode.chained_assignment = None  # default='warn'
 import scipy.stats as s
-import condig as cfg
+import config as cfg
 
 MOCAP_SEGMENT = cfg.data_params['MOCAP_SEGMENT']
 ACC_SEGMENT = cfg.data_params['ACC_SEGMENT']
@@ -40,39 +40,7 @@ class Poses3d_Dataset(torch.utils.data.Dataset):
             self.mocap_segment_id = None
             self.mocap_frames = kwargs.get('mocap_frames', None); self.acc_frames = kwargs.get('acc_frames',None);
 
-        elif self.data=='ntu':
-            self.num_frames = kwargs.get('num_frames',None)
-
         
-    # Helper - FUNCTION: Read data from a given .skeleton file and read the nxpx25x3 poses into array for each given id
-    #input: .pkl file name
-    #output: pose array in format frames x person x joints x dim
-    def read_skeleton(self,file):
-        with open(file,'r') as f:
-            lines=f.readlines()
-            num_joints=25
-            dim=3
-            num_frames=int(lines.pop(0)) #num of frames of this action
-            pose=[]
-            try:
-                for _ in range(num_frames):
-                        persons=int(lines.pop(0)) #persons in this frame, 1/2, Action 50-60 is 2 person
-                        for _ in range(persons):
-                            lines=lines[2:] #Ignore the num_join,person and skeletal info lines
-                            #Convert the 12 features to list and extract x,y,z coordinates for all 25 joints
-                            person_pose=lines[:num_joints]
-                            xyz_poses=[line.split(' ')[:3] for line in person_pose]
-                            xyz_poses=[list(map(float,pose)) for pose in xyz_poses]
-                            pose.append(xyz_poses) #25x3 or num_jontsxdim
-                            lines=lines[num_joints:] 
-            except Exception as e:
-                print("Corrupted file:",file)
-                print("EXCEPTION: ",e)
-                pass
-            #Merge persone and frames dimension 
-            pose=np.array(pose) 
-            return pose #num_frames x person x num_joints x dim = (nxpx25x3)
-
     #Function to compute magnitude of a signal
     def magnitude(self,data):
         data = data.numpy()
@@ -158,25 +126,6 @@ class Poses3d_Dataset(torch.utils.data.Dataset):
         return data #600 x 29 x 3
 
 
-    def read_mocap_window(self,mocap_win,segment_id):
-        path = mocap_win[0]
-        window_id = mocap_win[1]
-
-        if (not self.mocap.all()) or (self.mocap_segment_id!=segment_id):
-            data = self.read_mocap_segment(path)
-            self.mocap = data
-            self.mocap_segment_id = segment_id
-        else:
-            data=self.mocap
-
-        #Extract a window from mocap data
-        end_idx = (window_id+1)*MOCAP_WINDOW
-        start_idx = end_idx-MOCAP_WINDOW
-        mocap_data = data[start_idx : end_idx,:,:] #MOCAP_WINDOW x 29 x 3
-        
-        return mocap_data 
-    
-
     #Read segment - Function to read acceleration data and convert it to 120 x 3 [x,y,z]
     #Input: segment csv file path, window id
     #Output: Array: 20x3
@@ -228,7 +177,7 @@ class Poses3d_Dataset(torch.utils.data.Dataset):
     def extract_acc_features(self,data):
         #[mean(xyz), std(xyz), Max(xyz), Min(xyz), Kurtosis(xyz), Skewness(xyz)]
         data = data.numpy()
-        acc_features=torch.zeros((ACC_FEATURES,4))
+        acc_features=torch.zeros((18,4))
         #Mean
         acc_features[0,0] = np.mean(data[:,0])
         acc_features[1,0] = np.mean(data[:,1])
@@ -305,26 +254,6 @@ class Poses3d_Dataset(torch.utils.data.Dataset):
             
             return data_sample #mocap_frames x ACC_FEATUTES+acc_frames+num_joints x 3 = 191
 
-        
-        elif self.data=='ntu':
-            pose_path=self.pose2id[id] #get path to one action/sample's pose
-            data_sample=[]
-            #print("Sample: ",pose_path)
-            if pose_path.endswith('.skeleton'):
-                data_sample=self.read_skeleton(pose_path) #pose in format of frames x person x num_joints x dim (nxpx25x3)
-                #print("Num Frames: ",data_sample.shape[0])
-                
-                #Alter frame selection
-                #data_sample=self.frame_selection(data_sample,self.num_frames)
-                
-                #Simple Frame Selection
-                if data_sample.shape[0]>self.num_frames:
-                    data_sample=data_sample[:self.num_frames]
-                elif data_sample.shape[0]<self.num_frames:
-                    diff=self.num_frames - data_sample.shape[0]
-                    tiled=np.tile(data_sample[-1,:,:],(diff,1,1))
-                    data_sample=np.append(data_sample,tiled,axis=0)
-                return data_sample
 
     def __len__(self):
             'Denotes the total number of samples'
