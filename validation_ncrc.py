@@ -41,7 +41,7 @@ def main():
 
 
           #Load pretrained model and criterion
-          valid_models= ['model_acc_only','model_crossview_fusion','model_skeleton_only','model_simple_fusion']
+          valid_models= ['model_acc_only','model_crossview_fusion','model_skeleton_only', 'model_simple_fusion']
           model = args.model
           assert model in valid_models, "Please give a valid model name from this list: "+ str(valid_models)
           model_path = args.ckpt_path
