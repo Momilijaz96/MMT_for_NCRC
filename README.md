@@ -51,10 +51,11 @@ Create a conda environment and install dependencies from given requirements.txt.
 conda create --name myenv python=3.6
 conda env create -f Tools/mmt_env.yml
 ```
-## Training on custom data
-To be filled...
-### Data preperation
-### Training
+## Training 
+Download the data and put the path of acceleration and skeletal joints data and labels in the config file. Simply run the following command.
+```
+python3 train_ncrc.py 
+```
 
 ## Inference
 For inference load desired chcekpoint and select a model name. Forexa mple for validation on NCRC data using CrossView fusion model, run
