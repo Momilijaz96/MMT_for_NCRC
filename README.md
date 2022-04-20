@@ -51,18 +51,26 @@ Create a conda environment and install dependencies from given requirements.txt.
 conda create --name myenv python=3.6
 conda env create -f Tools/mmt_env.yml
 ```
-## Training on custom data
-To be filled...
-### Data preperation
-### Training
+## Training 
+Download the data and put the path of acceleration and skeletal joints data and labels in the config file. Simply run the following command.
+```
+python3 train_ncrc.py 
+```
 
 ## Inference
-For inference load desired chcekpoint and select a model name. Forexa mple for validation on NCRC data using CrossView fusion model, run
+For inference load desired chcekpoint and select a model name. For example for validation on NCRC data using CrossView fusion model, run.
+Where CKTP_PATH is the path to correspoding downloaded checkpoint model, and a valid model name can be 
+* crossview_fusion_model
+* model_acc_only
+* model_skeleton_only
+* model_simple_fusion
+
+
 ```
-python3 validation_ncrc.py --ckpt_path [CKPT PATH} --model 'crossview_fusion_model'
+python3 validation_ncrc.py --ckpt_path [CKPT PATH] --model 'crossview_fusion_model'
 ```
 ## Citation
-If you find this useful in your work, please consider citing,
+If you find this useful in your work, please give a ⭐ and consider citing:
 ```
 @article{momal2022multimodal_transformer,
   title={Multimodal Transformer for Nurse Activity Recognition},
