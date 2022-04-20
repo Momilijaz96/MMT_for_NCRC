@@ -60,7 +60,7 @@ python3 train_ncrc.py
 ## Inference
 For inference load desired chcekpoint and select a model name. Forexa mple for validation on NCRC data using CrossView fusion model, run
 ```
-python3 validation_ncrc.py --ckpt_path [CKPT PATH} --model 'crossview_fusion_model'
+python3 validation_ncrc.py --ckpt_path [CKPT PATH] --model 'crossview_fusion_model'
 ```
 ## Citation
 If you find this useful in your work, please consider citing,
