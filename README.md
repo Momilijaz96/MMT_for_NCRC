@@ -70,7 +70,7 @@ Where CKTP_PATH is the path to correspoding downloaded checkpoint model, and a v
 python3 validation_ncrc.py --ckpt_path [CKPT PATH] --model 'crossview_fusion_model'
 ```
 ## Citation
-If you find this useful in your work, please consider citing,
+If you find this useful in your work, please give a ⭐ and consider citing:
 ```
 @article{momal2022multimodal_transformer,
   title={Multimodal Transformer for Nurse Activity Recognition},
