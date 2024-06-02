@@ -1,4 +1,4 @@
-# MultiModal-Transformers-for-Nurse-Activity-Recognition [[arXiv]](https://arxiv.org/pdf/2204.04564.pdf)
+# MultiModal-Transformers-for-Nurse-Activity-Recognition [[CVPR2022]](https://openaccess.thecvf.com/content/CVPR2022W/CVPM/papers/Ijaz_Multimodal_Transformer_for_Nursing_Activity_Recognition_CVPRW_2022_paper.pdf)
 This repo is for official implementation of the paper "Multimodal transformer for Nurse Activity Recognition", published in the Fifth International Workshop on Computer Vision for Physiological Measurement (CVPM), in conjunction with CVPR 2022.
 
 # Introduction
